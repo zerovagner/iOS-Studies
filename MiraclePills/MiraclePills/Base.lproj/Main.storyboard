@@ -182,6 +182,20 @@
                                     <constraint firstAttribute="height" constant="155" id="Bxe-H2-PsH"/>
                                 </constraints>
                             </pickerView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="RlC-9d-HxD">
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="aSf-LB-hQG"/>
+                                    <constraint firstAttribute="height" constant="128" id="jRs-qW-Koq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-j7-zLs">
+                                <rect key="frame" x="94.666666666666686" y="639" width="225" height="45"/>
+                                <state key="normal" image="buyNowBtn"/>
+                                <connections>
+                                    <action selector="buyNowButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qcr-op-Hem"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -191,12 +205,14 @@
                             <constraint firstItem="NLW-LY-Cqg" firstAttribute="leading" secondItem="BYH-t3-5Gz" secondAttribute="leading" id="1Et-PM-BeC"/>
                             <constraint firstItem="NLW-LY-Cqg" firstAttribute="trailing" secondItem="BYH-t3-5Gz" secondAttribute="trailing" id="3Be-iU-sz9"/>
                             <constraint firstItem="6zu-GH-ZP9" firstAttribute="leading" secondItem="JYc-en-pDI" secondAttribute="leading" id="3EN-hT-CjG"/>
+                            <constraint firstItem="RlC-9d-HxD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="443-7M-qO5"/>
                             <constraint firstItem="RhE-9d-4XS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5be-bk-hk8"/>
                             <constraint firstItem="JYc-en-pDI" firstAttribute="leading" secondItem="UPE-OG-RVx" secondAttribute="leading" id="5rA-wV-FaA"/>
                             <constraint firstItem="QaZ-B1-6ka" firstAttribute="leading" secondItem="GKI-U2-ee2" secondAttribute="leading" id="67O-6x-OnB"/>
                             <constraint firstItem="f1B-Iz-gpU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="7Bj-pP-T0l"/>
                             <constraint firstItem="6zu-GH-ZP9" firstAttribute="trailing" secondItem="JYc-en-pDI" secondAttribute="trailing" id="8aL-HS-taJ"/>
                             <constraint firstItem="pJo-yr-aHs" firstAttribute="leading" secondItem="CTR-Vz-CAK" secondAttribute="leading" id="94j-og-dQJ"/>
+                            <constraint firstItem="WbM-j7-zLs" firstAttribute="top" secondItem="pcR-cT-oZT" secondAttribute="bottom" constant="8" id="A0k-Uw-b5e"/>
                             <constraint firstItem="8es-Tm-6g7" firstAttribute="top" secondItem="NLW-LY-Cqg" secondAttribute="bottom" constant="8" id="AQ5-yu-af5"/>
                             <constraint firstItem="GKI-U2-ee2" firstAttribute="top" secondItem="atS-zq-2Gs" secondAttribute="bottom" constant="8" id="Ap8-sk-cIq"/>
                             <constraint firstItem="JYc-en-pDI" firstAttribute="trailing" secondItem="UPE-OG-RVx" secondAttribute="trailing" id="BSB-KA-phC"/>
@@ -209,6 +225,7 @@
                             <constraint firstItem="RhE-9d-4XS" firstAttribute="top" secondItem="atS-zq-2Gs" secondAttribute="bottom" constant="8" id="Mru-Co-q28"/>
                             <constraint firstItem="aqn-ac-2ZI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RcG-GH-vF7"/>
                             <constraint firstItem="NLW-LY-Cqg" firstAttribute="top" secondItem="BYH-t3-5Gz" secondAttribute="bottom" constant="8" id="VUf-mv-0sT"/>
+                            <constraint firstItem="RlC-9d-HxD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VUr-qZ-LNa"/>
                             <constraint firstItem="6zu-GH-ZP9" firstAttribute="top" secondItem="JYc-en-pDI" secondAttribute="bottom" constant="8" id="WlP-nZ-QiC"/>
                             <constraint firstItem="GKI-U2-ee2" firstAttribute="leading" secondItem="CTR-Vz-CAK" secondAttribute="leading" id="YVR-jE-dX7"/>
                             <constraint firstItem="TBf-9r-CIG" firstAttribute="top" secondItem="3vd-nt-JDi" secondAttribute="bottom" constant="8" id="ZsQ-ep-DTN"/>
@@ -220,6 +237,7 @@
                             <constraint firstItem="JYc-en-pDI" firstAttribute="top" secondItem="UPE-OG-RVx" secondAttribute="bottom" constant="8" id="fHp-tR-Dsv"/>
                             <constraint firstItem="pcR-cT-oZT" firstAttribute="top" secondItem="pJo-yr-aHs" secondAttribute="bottom" constant="8" id="fp0-HJ-Qfe"/>
                             <constraint firstItem="8es-Tm-6g7" firstAttribute="leading" secondItem="NLW-LY-Cqg" secondAttribute="leading" id="g53-vd-RJ6"/>
+                            <constraint firstItem="WbM-j7-zLs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWq-D4-cAI"/>
                             <constraint firstItem="8es-Tm-6g7" firstAttribute="trailing" secondItem="NLW-LY-Cqg" secondAttribute="trailing" id="gqB-Gi-vKl"/>
                             <constraint firstItem="f1B-Iz-gpU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j36-EB-tOA"/>
                             <constraint firstItem="pcR-cT-oZT" firstAttribute="leading" secondItem="eFT-eZ-8eh" secondAttribute="leading" id="jT8-yp-Oy2"/>
@@ -235,11 +253,24 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="BYH-t3-5Gz" id="6Ff-lP-itr"/>
+                        <outlet property="addressTextField" destination="NLW-LY-Cqg" id="fsD-8O-UqO"/>
+                        <outlet property="buyNowButton" destination="WbM-j7-zLs" id="pdx-7w-MP3"/>
+                        <outlet property="cityLabel" destination="8es-Tm-6g7" id="9dI-Hy-rlh"/>
+                        <outlet property="cityTextField" destination="eFT-eZ-8eh" id="KXN-oo-1sD"/>
                         <outlet property="countryButton" destination="QaZ-B1-6ka" id="ch7-fE-anb"/>
                         <outlet property="countryLabel" destination="GKI-U2-ee2" id="RBz-wL-1oN"/>
                         <outlet property="countryPicker" destination="aqn-ac-2ZI" id="rAw-0w-vtf"/>
+                        <outlet property="divider" destination="UPE-OG-RVx" id="b2s-6l-dVI"/>
+                        <outlet property="nameLabel" destination="JYc-en-pDI" id="zIR-8Y-E1V"/>
+                        <outlet property="nameTextField" destination="6zu-GH-ZP9" id="Zel-a4-Rle"/>
+                        <outlet property="pillImage" destination="f1B-Iz-gpU" id="KhV-5S-hDM"/>
+                        <outlet property="pillLabel" destination="3vd-nt-JDi" id="7xn-D1-pwk"/>
+                        <outlet property="priceLabel" destination="TBf-9r-CIG" id="H23-T7-5ty"/>
                         <outlet property="stateButton" destination="atS-zq-2Gs" id="vsn-5I-64P"/>
+                        <outlet property="stateLabel" destination="CTR-Vz-CAK" id="cM2-Ar-0Re"/>
                         <outlet property="statePicker" destination="RhE-9d-4XS" id="h15-eK-CHf"/>
+                        <outlet property="successSign" destination="RlC-9d-HxD" id="urG-Ye-730"/>
                         <outlet property="zipCodeLabel" destination="pJo-yr-aHs" id="HAR-Rc-IO5"/>
                         <outlet property="zipCodeTextField" destination="pcR-cT-oZT" id="bt3-mw-wNX"/>
                     </connections>
@@ -250,6 +281,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buyNowBtn" width="225" height="45"/>
         <image name="miraclePillEmoji" width="90" height="90"/>
+        <image name="successIndicator" width="180" height="180"/>
     </resources>
 </document>

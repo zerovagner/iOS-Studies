@@ -9,7 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+	@IBOutlet weak var pillImage: UIImageView!
+	@IBOutlet weak var pillLabel: UILabel!
+	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var divider: UIView!
+	@IBOutlet weak var nameTextField: UITextField!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var addressTextField: UITextField!
+	@IBOutlet weak var addressLabel: UILabel!
+	@IBOutlet weak var cityTextField: UITextField!
+	@IBOutlet weak var cityLabel: UILabel!
+	@IBOutlet weak var stateLabel: UILabel!
+	
 	@IBOutlet weak var countryPicker: UIPickerView!
 	@IBOutlet weak var countryButton: UIButton!
 	@IBOutlet weak var statePicker: UIPickerView!
@@ -18,6 +29,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 	@IBOutlet weak var countryLabel: UILabel!
 	@IBOutlet weak var zipCodeLabel: UILabel!
 	@IBOutlet weak var zipCodeTextField: UITextField!
+	
+	@IBOutlet weak var successSign: UIImageView!
+	@IBOutlet weak var buyNowButton: UIButton!
 	
 	let states = ["Alaska", "Arizona", "California", "New York", "New Jersey", "Oregon", "Washignton"]
 	let countries = ["Argentina", "Brazil", "Canada", "England", "United States"]
@@ -43,14 +57,46 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 		countryPicker.isHidden = true
 		zipCodeTextField.isHidden = true
 		zipCodeLabel.isHidden = true
+		buyNowButton.isHidden = true
 	}
 
+	@IBAction func buyNowButtonPressed(_ sender: Any) {
+		/* There are three options on hiding all the elements when the BUY NOW button is pressed:
+			- hide all elements one by one and unhide the success sign
+			- create a new view covering the current, containing only the sign
+			- navigate to a new view containing the success sign
+		
+			I chose the first option to keep the solution in a single view
+		*/
+		pillImage.isHidden = true
+		pillLabel.isHidden = true
+		priceLabel.isHidden = true
+		divider.isHidden = true
+		nameLabel.isHidden = true
+		nameTextField.isHidden = true
+		addressLabel.isHidden = true
+		addressTextField.isHidden = true
+		cityLabel.isHidden = true
+		cityTextField.isHidden = true
+		stateLabel.isHidden = true
+		statePicker.isHidden = true
+		stateButton.isHidden = true
+		countryButton.isHidden = true
+		countryLabel.isHidden = true
+		countryPicker.isHidden = true
+		zipCodeTextField.isHidden = true
+		zipCodeLabel.isHidden = true
+		buyNowButton.isHidden = true
+		
+		successSign.isHidden = false
+	}
 	@IBAction func countryButtonPressed(_ sender: UIButton) {
 		countryPicker.isHidden = false
 		
 		statePicker.isHidden = true
 		zipCodeLabel.isHidden = true
 		zipCodeTextField.isHidden = true
+		buyNowButton.isHidden = true
 	}
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -80,16 +126,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 			
 			countryLabel.isHidden = false
 			countryButton.isHidden = false
-			zipCodeTextField.isHidden = false
-			zipCodeLabel.isHidden = false
 		}
 		if pickerView == countryPicker {
 			countryButton.setTitle(countries[row], for: UIControlState.normal)
 			countryPicker.isHidden = true
-		
-			zipCodeLabel.isHidden = false
-			zipCodeTextField.isHidden = false
 		}
+		zipCodeTextField.isHidden = false
+		zipCodeLabel.isHidden = false
+		buyNowButton.isHidden = false
 	}
 }
 
