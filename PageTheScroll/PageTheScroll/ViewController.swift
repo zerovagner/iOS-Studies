@@ -17,9 +17,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		
+	override func viewDidAppear(_ animated: Bool) {
 		let scrollWidth = scrollView.frame.width
 		var contentWidth: CGFloat = 0.0
 		
@@ -29,14 +27,41 @@ class ViewController: UIViewController {
 			images.append(imageView)
 			
 			let newX = scrollWidth / 2 + scrollWidth * CGFloat(x)
-			contentWidth += newX
+			contentWidth += scrollWidth
 			scrollView.addSubview(imageView)
 			
 			imageView.frame = CGRect(x: newX - 75, y: (view.frame.size.height / 2) - 75, width: 150, height: 150)
 		}
 		scrollView.contentSize = (CGSize(width: contentWidth, height: view.frame.size.height))
 	}
-
-
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
+	
+	@IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+		processSwipe(sender)
+	}
+	
+	@IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+		processSwipe(sender)
+	}
+	
+	func processSwipe(_ sender: UISwipeGestureRecognizer) {
+		var newX = CGFloat(0.0)
+		if sender.direction == UISwipeGestureRecognizerDirection.left {
+			newX = scrollView.contentOffset.x + scrollView.frame.width
+			if newX >= scrollView.contentSize.width {
+				newX = scrollView.contentSize.width
+			}
+		}
+		if sender.direction == UISwipeGestureRecognizerDirection.right {
+			newX = scrollView.contentOffset.x - scrollView.frame.width
+			if newX < 0 {
+				newX = 0
+			}
+		}
+		scrollView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
+	}
 }
 
