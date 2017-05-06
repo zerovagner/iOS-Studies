@@ -13,6 +13,7 @@
 		DA978BB21EBD6013001B5B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA978BB11EBD6013001B5B98 /* Assets.xcassets */; };
 		DA978BB51EBD6013001B5B98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA978BB31EBD6013001B5B98 /* LaunchScreen.storyboard */; };
 		DA978BBD1EBD60EC001B5B98 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA978BBC1EBD60EC001B5B98 /* MusicListViewController.swift */; };
+		DA978BBF1EBD653E001B5B98 /* PlaySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA978BBE1EBD653E001B5B98 /* PlaySongViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DA978BB41EBD6013001B5B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA978BB61EBD6013001B5B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA978BBC1EBD60EC001B5B98 /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
+		DA978BBE1EBD653E001B5B98 /* PlaySongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				DA978BAA1EBD6013001B5B98 /* AppDelegate.swift */,
 				DA978BAC1EBD6013001B5B98 /* LoginViewController.swift */,
-				DA978BAE1EBD6013001B5B98 /* Main.storyboard */,
+				DA978BBE1EBD653E001B5B98 /* PlaySongViewController.swift */,
 				DA978BBC1EBD60EC001B5B98 /* MusicListViewController.swift */,
+				DA978BAE1EBD6013001B5B98 /* Main.storyboard */,
 				DA978BB11EBD6013001B5B98 /* Assets.xcassets */,
 				DA978BB31EBD6013001B5B98 /* LaunchScreen.storyboard */,
 				DA978BB61EBD6013001B5B98 /* Info.plist */,
@@ -143,6 +146,7 @@
 				DA978BAD1EBD6013001B5B98 /* LoginViewController.swift in Sources */,
 				DA978BAB1EBD6013001B5B98 /* AppDelegate.swift in Sources */,
 				DA978BBD1EBD60EC001B5B98 /* MusicListViewController.swift in Sources */,
+				DA978BBF1EBD653E001B5B98 /* PlaySongViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
