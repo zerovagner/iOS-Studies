@@ -24,8 +24,7 @@ class CalculatorButton: UIButton {
 		}
 	}
 	
-	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-		super.touchesEnded(touches, with: event)
+	func playSound() {
 		if CalculatorButton.btnSound.isPlaying {
 			CalculatorButton.btnSound.stop()
 		}

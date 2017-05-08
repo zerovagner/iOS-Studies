@@ -15,6 +15,7 @@
 		DAD619441EC0C7C200EF36A5 /* ProFontWindows.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAD619431EC0C7C200EF36A5 /* ProFontWindows.ttf */; };
 		DAD619461EC0C8DE00EF36A5 /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAD619451EC0C8DE00EF36A5 /* btn.wav */; };
 		DAD619481EC0CB4200EF36A5 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619471EC0CB4200EF36A5 /* CalculatorButton.swift */; };
+		DAD6194A1EC0FD0500EF36A5 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619491EC0FD0500EF36A5 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DAD619431EC0C7C200EF36A5 /* ProFontWindows.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProFontWindows.ttf; sourceTree = "<group>"; };
 		DAD619451EC0C8DE00EF36A5 /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 		DAD619471EC0CB4200EF36A5 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		DAD619491EC0FD0500EF36A5 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DA978BCC1EBD6D5C001B5B98 /* AppDelegate.swift */,
 				DA978BCE1EBD6D5C001B5B98 /* ViewController.swift */,
 				DAD619471EC0CB4200EF36A5 /* CalculatorButton.swift */,
+				DAD619491EC0FD0500EF36A5 /* Calculator.swift */,
 				DA978BD01EBD6D5C001B5B98 /* Main.storyboard */,
 				DA978BD31EBD6D5C001B5B98 /* Assets.xcassets */,
 				DA978BD51EBD6D5C001B5B98 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA978BCF1EBD6D5C001B5B98 /* ViewController.swift in Sources */,
+				DAD6194A1EC0FD0500EF36A5 /* Calculator.swift in Sources */,
 				DAD619481EC0CB4200EF36A5 /* CalculatorButton.swift in Sources */,
 				DA978BCD1EBD6D5C001B5B98 /* AppDelegate.swift in Sources */,
 			);
