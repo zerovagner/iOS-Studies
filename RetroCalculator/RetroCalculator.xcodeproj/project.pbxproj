@@ -12,6 +12,7 @@
 		DA978BD21EBD6D5C001B5B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA978BD01EBD6D5C001B5B98 /* Main.storyboard */; };
 		DA978BD41EBD6D5C001B5B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA978BD31EBD6D5C001B5B98 /* Assets.xcassets */; };
 		DA978BD71EBD6D5C001B5B98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA978BD51EBD6D5C001B5B98 /* LaunchScreen.storyboard */; };
+		DAD619441EC0C7C200EF36A5 /* ProFontWindows.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAD619431EC0C7C200EF36A5 /* ProFontWindows.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DA978BD31EBD6D5C001B5B98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA978BD61EBD6D5C001B5B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA978BD81EBD6D5C001B5B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD619431EC0C7C200EF36A5 /* ProFontWindows.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProFontWindows.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				DA978BD31EBD6D5C001B5B98 /* Assets.xcassets */,
 				DA978BD51EBD6D5C001B5B98 /* LaunchScreen.storyboard */,
 				DA978BD81EBD6D5C001B5B98 /* Info.plist */,
+				DAD619431EC0C7C200EF36A5 /* ProFontWindows.ttf */,
 			);
 			path = RetroCalculator;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA978BD71EBD6D5C001B5B98 /* LaunchScreen.storyboard in Resources */,
+				DAD619441EC0C7C200EF36A5 /* ProFontWindows.ttf in Resources */,
 				DA978BD41EBD6D5C001B5B98 /* Assets.xcassets in Resources */,
 				DA978BD21EBD6D5C001B5B98 /* Main.storyboard in Resources */,
 			);
@@ -304,6 +308,7 @@
 				DA978BDD1EBD6D5C001B5B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
