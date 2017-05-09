@@ -6,3 +6,4 @@ The following are reproductions of the content presented in the course iOS 10 & 
 - Miracle Pills (Section 4: Foundational iOS -> Lectures 42 - 46)
 - PageTheScroll (Section 4: Foundational iOS -> Lecture 47)
 - SwappingScreens (Section 4: Foundational iOS -> Lecture 49 - 50)
+- RetroCalculator (Section 4: Foundational iOS -> Lecture 51 - 57)
