@@ -37,6 +37,7 @@ struct Calculator {
 					result = "\(Int(leftOperand)! * Int(rightOperand)!)"
 				} else if operation == .Divide {
 					if rightOperand == "0" {
+						clear()
 						result = "ERROR"
 						return
 					}
@@ -55,5 +56,13 @@ struct Calculator {
 			runningNumber = ""
 			currentOperation = operation
 		}
+	}
+	
+	mutating func clear() {
+		leftOperand = ""
+		rightOperand = ""
+		result = ""
+		runningNumber = ""
+		currentOperation = .Empty
 	}
 }

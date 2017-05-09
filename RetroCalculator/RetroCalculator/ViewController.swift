@@ -57,5 +57,9 @@ class ViewController: UIViewController {
 		outputLabel.text = calculator.result
 	}
 
+	@IBAction func clearPressed(_ sender: Any) {
+		calculator.clear()
+		outputLabel.text = "0"
+	}
 }
 

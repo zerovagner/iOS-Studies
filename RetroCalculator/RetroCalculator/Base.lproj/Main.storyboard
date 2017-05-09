@@ -59,59 +59,71 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GP7-ys-dyO">
-                                <rect key="frame" x="42.5" y="147" width="235" height="256"/>
+                                <rect key="frame" x="42.5" y="113.5" width="235" height="323"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="y9O-GO-u4z">
                                         <rect key="frame" x="0.0" y="0.0" width="235" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-2I-T9z" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyD-q6-gXT">
+                                                <rect key="frame" x="0.0" y="0.0" width="235" height="55"/>
+                                                <state key="normal" image="clear"/>
+                                                <connections>
+                                                    <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cge-Iw-3xw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7LG-yg-aeu">
+                                        <rect key="frame" x="0.0" y="67" width="235" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QA2-as-RZu" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="NXy-4z-yWL"/>
-                                                    <constraint firstAttribute="width" constant="55" id="rn7-KX-Bxm"/>
+                                                    <constraint firstAttribute="width" constant="55" id="8JJ-pn-rIk"/>
+                                                    <constraint firstAttribute="height" constant="55" id="Jui-W4-yh7"/>
                                                 </constraints>
                                                 <state key="normal" image="7"/>
                                                 <connections>
-                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5vZ-6B-oo3"/>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhU-FT-teB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQw-xR-0Zq" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
+                                            <button opaque="NO" tag="8" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3K-uW-MKA" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="60" y="0.0" width="55" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="55" id="Kap-rr-9sl"/>
-                                                    <constraint firstAttribute="height" constant="55" id="Vsn-fH-8yT"/>
+                                                    <constraint firstAttribute="width" constant="55" id="eY5-XC-10s"/>
+                                                    <constraint firstAttribute="height" constant="55" id="yMV-fi-NL5"/>
                                                 </constraints>
                                                 <state key="normal" image="8"/>
                                                 <connections>
-                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U6o-4i-TyB"/>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pod-Zd-X9f"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pp-IY-Ahc" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
+                                            <button opaque="NO" tag="9" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlV-bF-PBA" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="55" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="BoP-OS-ixr"/>
-                                                    <constraint firstAttribute="width" constant="55" id="bPZ-Yl-PQx"/>
+                                                    <constraint firstAttribute="width" constant="55" id="NsN-Yn-zhD"/>
+                                                    <constraint firstAttribute="height" constant="55" id="UQI-69-9MJ"/>
                                                 </constraints>
                                                 <state key="normal" image="9"/>
                                                 <connections>
-                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hda-cb-i4H"/>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Gd-V8-vsz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-jm-pvy" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
+                                            <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTf-FJ-WvI" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="180" y="0.0" width="55" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="55" id="CrF-7X-Kwl"/>
-                                                    <constraint firstAttribute="height" constant="55" id="FEj-9d-Wgq"/>
+                                                    <constraint firstAttribute="height" constant="55" id="TpT-vx-hze"/>
+                                                    <constraint firstAttribute="width" constant="55" id="eoe-9A-GU9"/>
                                                 </constraints>
                                                 <state key="normal" image="add"/>
                                                 <connections>
-                                                    <action selector="operatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqw-X5-jhc"/>
+                                                    <action selector="operatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDZ-NW-VEE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b38-wE-F3h">
-                                        <rect key="frame" x="0.0" y="67" width="235" height="55"/>
+                                        <rect key="frame" x="0.0" y="134" width="235" height="55"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7e-11-TCm" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
@@ -160,7 +172,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-37-aRI">
-                                        <rect key="frame" x="0.0" y="134" width="235" height="55"/>
+                                        <rect key="frame" x="0.0" y="201" width="235" height="55"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzk-qf-B9T" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
@@ -209,7 +221,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0hw-Fr-ltt">
-                                        <rect key="frame" x="0.0" y="201" width="235" height="55"/>
+                                        <rect key="frame" x="0.0" y="268" width="235" height="55"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-D4-mSj" customClass="CalculatorButton" customModule="RetroCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
@@ -298,6 +310,7 @@
         <image name="9" width="111" height="114"/>
         <image name="add" width="111" height="114"/>
         <image name="backpanel" width="620" height="938"/>
+        <image name="clear" width="333" height="114"/>
         <image name="counter" width="516" height="133"/>
         <image name="divide" width="111" height="114"/>
         <image name="equal" width="111" height="114"/>
