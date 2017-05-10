@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="208" width="375" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="wev-Sv-o1W">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="67" id="wev-Sv-o1W" customClass="PartyTableViewCell" customModule="PartyRockMansion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wev-Sv-o1W" id="o0J-EP-pPp">
@@ -79,14 +79,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="hiK-rY-tL1">
-                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="8" width="89" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="N9x-L3-KC2"/>
+                                                        <constraint firstAttribute="width" constant="89" id="N9x-L3-KC2"/>
                                                         <constraint firstAttribute="height" constant="50" id="WE8-s4-duG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where the Sun Goes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9z-cq-B40">
-                                                    <rect key="frame" x="66" y="12" width="301" height="43"/>
+                                                    <rect key="frame" x="105" y="12" width="262" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="P1A-zx-ymS"/>
                                                     </constraints>
@@ -103,6 +103,10 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="n9z-cq-B40" secondAttribute="trailing" id="e45-AT-IyE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="hiK-rY-tL1" id="ibQ-C1-yra"/>
+                                            <outlet property="videoTitle" destination="n9z-cq-B40" id="gkk-8G-lMA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -122,6 +126,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="partyTableView" destination="iWA-Vt-acV" id="CWT-3x-mSW"/>
                         <segue destination="cD4-f2-9So" kind="showDetail" identifier="mainVideoSegue" id="nO2-EL-taV"/>
                     </connections>
                 </viewController>
