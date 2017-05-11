@@ -7,3 +7,4 @@ The following are reproductions of the content presented in the course iOS 10 & 
 - PageTheScroll (Section 4: Foundational iOS -> Lecture 47)
 - SwappingScreens (Section 4: Foundational iOS -> Lecture 49 - 50)
 - RetroCalculator (Section 4: Foundational iOS -> Lecture 51 - 57)
+- PartyRockMansion (Section 4: Foundational iOS -> Lecture 60 - 65)
