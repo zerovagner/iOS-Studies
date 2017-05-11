@@ -26,5 +26,18 @@ class PartyTableViewCell: UITableViewCell {
 
 	func setUpCell (fromParty party: Party) {
 		videoTitle.text = party.videoTitle
+		let url = URL(string: party.imageURL)!
+		
+		DispatchQueue.global().async {
+			do {
+				let data = try Data(contentsOf: url)
+				DispatchQueue.global().sync {
+					self.videoPreviewImage.image = UIImage(data: data)
+				}
+			} catch {
+				print("\(error)")
+			}
+		}
+		
 	}
 }

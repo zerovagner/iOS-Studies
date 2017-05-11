@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		]
 		
 		let titles = [
-			"Watch This Without Laughing",
+			"LAUGHING",
 			"KNOW 70s MUSIC",
 			"DOG FOOD VS REAL FOOD",
 			"OREO CHALLENGE"
