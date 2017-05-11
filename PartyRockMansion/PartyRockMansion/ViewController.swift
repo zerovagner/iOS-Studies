@@ -39,6 +39,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		return parties.count
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let party = parties[indexPath.row]
+		performSegue(withIdentifier: "mainVideoSegue", sender: party)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let vc = segue.destination as? VideoViewController {
+			if let party = sender as? Party {
+				vc.setParty(party)
+			}
+		}
+	}
+	
 	func createDummyData() {
 		let images = [
 			"https://i.ytimg.com/vi/CvpV4kDQeKU/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=W4Do7QecU9tbJXX13qX370Va9cs",

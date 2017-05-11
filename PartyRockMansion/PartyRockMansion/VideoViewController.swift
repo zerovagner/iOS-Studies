@@ -10,10 +10,20 @@ import UIKit
 
 class VideoViewController: UIViewController {
 
+	@IBOutlet weak var webView: UIWebView!
+	@IBOutlet weak var titleLabel: UILabel!
+	
+	private var party: Party!
+	
+	func setParty (_ newParty: Party) {
+		party = newParty
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = party.videoTitle
+		webView.loadHTMLString(party.videoURL, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -153,14 +153,30 @@
                                     <constraint firstAttribute="height" constant="238" id="j7O-lo-dBZ"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFx-hL-9oh">
+                                <rect key="frame" x="5" y="288" width="365" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="YHF-3J-3l3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HFx-hL-9oh" secondAttribute="trailing" constant="5" id="9c1-VQ-WbA"/>
                             <constraint firstItem="bpz-QC-oDk" firstAttribute="leading" secondItem="5ly-PE-7tm" secondAttribute="leading" id="HNQ-r3-cxX"/>
                             <constraint firstItem="bpz-QC-oDk" firstAttribute="top" secondItem="5ly-PE-7tm" secondAttribute="top" id="VXk-Nz-WVU"/>
+                            <constraint firstItem="HFx-hL-9oh" firstAttribute="top" secondItem="bpz-QC-oDk" secondAttribute="bottom" constant="50" id="Xng-M6-ifY"/>
                             <constraint firstAttribute="trailing" secondItem="bpz-QC-oDk" secondAttribute="trailing" id="jx4-RW-uVM"/>
+                            <constraint firstItem="HFx-hL-9oh" firstAttribute="leading" secondItem="5ly-PE-7tm" secondAttribute="leading" constant="5" id="tgv-Uc-J5o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="HFx-hL-9oh" id="uJe-nj-T21"/>
+                        <outlet property="webView" destination="bpz-QC-oDk" id="IG5-l5-RdX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2u-4x-7Jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
