@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias DownloadComplete = () -> ()
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var dateLabel: UILabel!
@@ -17,10 +19,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBOutlet weak var weatherImage: UIImageView!
 	@IBOutlet weak var tableView: UITableView!
 	
+	var currentWeather = Weather()
+	var forecast = [Weather]()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
+		currentWeather.downloadCurrentWeatherData {
+			self.updateCurrentWeather()
+		}
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -39,6 +47,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let tableCell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
 		return tableCell
+	}
+	
+	func updateCurrentWeather() {
+		dateLabel.text = currentWeather.date
+		temperatureLabel.text = currentWeather.currentTemperature
+		cityLabel.text = currentWeather.cityName
+		weatherLabel.text = currentWeather.currentWeather
+		weatherImage.image = UIImage(named: currentWeather.currentWeather)
 	}
 }
 
