@@ -12,6 +12,7 @@
 		DABBBC0C1ED4A9C0005DE86D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC0A1ED4A9C0005DE86D /* Main.storyboard */; };
 		DABBBC0E1ED4A9C0005DE86D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC0D1ED4A9C0005DE86D /* Assets.xcassets */; };
 		DABBBC111ED4A9C0005DE86D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC0F1ED4A9C0005DE86D /* LaunchScreen.storyboard */; };
+		DABBBC191ED4ABFC005DE86D /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC181ED4ABFC005DE86D /* pokemon.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DABBBC0D1ED4A9C0005DE86D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABBBC101ED4A9C0005DE86D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABBBC121ED4A9C0005DE86D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DABBBC181ED4ABFC005DE86D /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				DABBBC081ED4A9C0005DE86D /* ViewController.swift */,
 				DABBBC0A1ED4A9C0005DE86D /* Main.storyboard */,
 				DABBBC0D1ED4A9C0005DE86D /* Assets.xcassets */,
+				DABBBC181ED4ABFC005DE86D /* pokemon.csv */,
 				DABBBC0F1ED4A9C0005DE86D /* LaunchScreen.storyboard */,
 				DABBBC121ED4A9C0005DE86D /* Info.plist */,
 			);
@@ -126,6 +129,7 @@
 			files = (
 				DABBBC111ED4A9C0005DE86D /* LaunchScreen.storyboard in Resources */,
 				DABBBC0E1ED4A9C0005DE86D /* Assets.xcassets in Resources */,
+				DABBBC191ED4ABFC005DE86D /* pokemon.csv in Resources */,
 				DABBBC0C1ED4A9C0005DE86D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
