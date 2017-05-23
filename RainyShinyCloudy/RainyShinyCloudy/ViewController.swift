@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 typealias DownloadComplete = () -> ()
 
@@ -19,15 +20,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBOutlet weak var weatherImage: UIImageView!
 	@IBOutlet weak var tableView: UITableView!
 	
-	var currentWeather = Weather()
+	var currentWeather: Weather!
 	var forecast = [Weather]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		currentWeather = Weather()
 		tableView.dataSource = self
 		tableView.delegate = self
 		currentWeather.downloadCurrentWeatherData {
-			self.updateCurrentWeather()
+			self.downloadForecastWeatherData {
+				self.updateCurrentWeather()
+			}
 		}
 	}
 
@@ -41,12 +45,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 6
+		return forecast.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let tableCell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
-		return tableCell
+		if let tableCell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell {
+			tableCell.setUp(fromWeather: forecast[indexPath.row])
+			return tableCell
+		} else {
+			return WeatherTableViewCell()
+		}
 	}
 	
 	func updateCurrentWeather() {
@@ -55,6 +63,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		cityLabel.text = currentWeather.cityName
 		weatherLabel.text = currentWeather.currentWeather
 		weatherImage.image = UIImage(named: currentWeather.currentWeather)
+	}
+	
+	func downloadForecastWeatherData(completed: @escaping DownloadComplete) {
+		Alamofire.request(Weather.forecastUrl, parameters: Weather.params).responseJSON { response in
+			let result = response.result
+			if let dict = result.value as? [String:Any] {
+				if let list = dict["list"] as? [[String:Any]] {
+					for obj in list {
+						let weather = Weather(obj: obj)
+						self.forecast.append(weather)
+					}
+					self.tableView.reloadData()
+				}
+			}
+		}
+		completed()
 	}
 }
 
