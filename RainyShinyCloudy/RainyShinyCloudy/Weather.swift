@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreLocation
 
 class Weather {
 	private(set) var cityName: String!
@@ -19,10 +20,12 @@ class Weather {
 	
 	static let baseUrl = "http://api.openweathermap.org/data/2.5/"
 	static let params = [
-		"lat":"35",
-		"lon":"139",
+		"lat":"\(lat)",
+		"lon":"\(lon)",
 		"appid":"42a1771a0b787bf12e734ada0cfc80cb"
 	]
+	private static var lat = 0.0
+	private static var lon = 0.0
 	
 	static let forecastUrl = baseUrl + "forecast/daily"
 	
@@ -50,10 +53,10 @@ class Weather {
 	init(obj: [String:Any]) {
 		if let temp = obj["temp"] as? [String:Any] {
 			if let min = temp["min"] as? Double {
-				minTemperature = "\(round(10 * (min - 273)/10))º"
+				minTemperature = "\(round(10 * (min - 273))/10)º"
 			}
 			if let max = temp["max"] as? Double {
-				maxTemperature = "\(round(10 * (max - 273)/10))º"
+				maxTemperature = "\(round(10 * (max - 273))/10)º"
 			}
 		}
 		if let weather = obj["weather"] as? [[String:Any]] {
@@ -75,15 +78,18 @@ class Weather {
 	func setUp (fromJSON dict: [String:Any]) {
 		if let name = dict["name"] as? String {
 			cityName = name.capitalized
+			print(cityName)
 		}
 		if let weather = dict["weather"] as? [[String:Any]] {
 			if let curWeather = weather[0]["main"] as? String {
 				currentWeather = curWeather.capitalized
+				print(currentWeather)
 			}
 		}
 		if let main = dict["main"] as? [String:Any] {
 			if let temp = main["temp"] as? Double {
-				currentTemperature = "\(round(10 * (temp - 273)/10))º"
+				currentTemperature = "\(round(10 * (temp - 273))/10)º"
+				print(currentTemperature)
 			}
 		}
 	}
@@ -97,5 +103,11 @@ class Weather {
 			}
 			completed()
 		}
+	}
+	
+	static func setCoordinates(fromLocation location: CLLocation) {
+		lat = round(100 * location.coordinate.latitude)/100
+		lon = round(100 * location.coordinate.longitude)/100
+		print("lat: \(lat) lon: \(lon)")
 	}
 }

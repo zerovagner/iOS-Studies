@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
 typealias DownloadComplete = () -> ()
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
 	@IBOutlet weak var dateLabel: UILabel!
 	@IBOutlet weak var temperatureLabel: UILabel!
@@ -22,17 +23,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	var currentWeather: Weather!
 	var forecast = [Weather]()
+	var location: CLLocation!
+	let locationManager = CLLocationManager()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		currentWeather = Weather()
 		tableView.dataSource = self
 		tableView.delegate = self
-		currentWeather.downloadCurrentWeatherData {
-			self.downloadForecastWeatherData {
-				self.updateCurrentWeather()
-			}
-		}
+		
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.startMonitoringSignificantLocationChanges()
+		
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		locationStatus()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -79,6 +88,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			}
 		}
 		completed()
+	}
+	
+	func locationStatus() {
+		if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+			location = locationManager.location
+			Weather.setCoordinates(fromLocation: location)
+			currentWeather.downloadCurrentWeatherData {
+				self.downloadForecastWeatherData {
+					self.updateCurrentWeather()
+				}
+			}
+		} else {
+			locationManager.requestWhenInUseAuthorization()
+			locationStatus()
+		}
 	}
 }
 
