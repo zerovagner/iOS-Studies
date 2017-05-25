@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA7A09F01ED743E900BC79A3 /* PokeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A09EF1ED743E900BC79A3 /* PokeCollectionViewCell.swift */; };
 		DABBBC071ED4A9C0005DE86D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */; };
 		DABBBC091ED4A9C0005DE86D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBBC081ED4A9C0005DE86D /* ViewController.swift */; };
 		DABBBC0C1ED4A9C0005DE86D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC0A1ED4A9C0005DE86D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA7A09EF1ED743E900BC79A3 /* PokeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DABBBC031ED4A9C0005DE86D /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABBBC081ED4A9C0005DE86D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA7A09EE1ED743C400BC79A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA7A09EF1ED743E900BC79A3 /* PokeCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		DABBBBFA1ED4A9C0005DE86D = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		DABBBC051ED4A9C0005DE86D /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				DA7A09EE1ED743C400BC79A3 /* View */,
 				DABBBC1A1ED4AEB2005DE86D /* Model */,
 				DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */,
 				DABBBC081ED4A9C0005DE86D /* ViewController.swift */,
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DABBBC091ED4A9C0005DE86D /* ViewController.swift in Sources */,
+				DA7A09F01ED743E900BC79A3 /* PokeCollectionViewCell.swift in Sources */,
 				DABBBC071ED4A9C0005DE86D /* AppDelegate.swift in Sources */,
 				DABBBC1C1ED4AECB005DE86D /* Pokemon.swift in Sources */,
 			);
@@ -320,6 +332,7 @@
 				DABBBC171ED4A9C0005DE86D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
