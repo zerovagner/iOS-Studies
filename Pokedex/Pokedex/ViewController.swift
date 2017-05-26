@@ -9,17 +9,21 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
 	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var searchBar: UISearchBar!
 	
 	var list = [Pokemon]()
+	var filteredList = [Pokemon]()
 	var musicPlayer: AVAudioPlayer!
+	var searchMode = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		collectionView.dataSource = self
 		collectionView.delegate = self
+		searchBar.delegate = self
 		
 		parsePokemonCSV()
 		initAudio()
@@ -58,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeCell", for: indexPath) as? PokeCollectionViewCell {
-			cell.setUpCell(fromPokemon: list[indexPath.row])
+			cell.setUpCell(fromPokemon: searchMode ? filteredList[indexPath.row] : list[indexPath.row])
 			return cell
 		}
 		return UICollectionViewCell()
@@ -73,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return list.count
+		return searchMode ? filteredList.count : list.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -88,6 +92,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 			musicPlayer.play()
 			sender.alpha = 1.0
 		}
+	}
+	
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		view.endEditing(true)
+	}
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		if searchBar.text == nil || searchBar.text == "" {
+			searchMode = false
+			view.endEditing(true)
+		} else {
+			searchMode = true
+			filteredList = list.filter({$0.name.range(of: searchText.lowercased()) != nil})
+		}
+		collectionView.reloadData()
 	}
 }
 
