@@ -11,6 +11,13 @@ import Foundation
 class Pokemon {
 	private(set) var name: String!
 	private(set) var id: Int!
+	private(set) var description :String!
+	private(set) var type :String!
+	private(set) var attack :String!
+	private(set) var defense :String!
+	private(set) var height :String!
+	private(set) var weight :String!
+	private(set) var nextEvoText :String!
 	
 	init(_ id: Int, _ name: String) {
 		self.name = name

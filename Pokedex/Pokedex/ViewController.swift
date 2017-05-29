@@ -69,7 +69,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
+		let poke = searchMode ? filteredList[indexPath.row] : list[indexPath.row]
+		performSegue(withIdentifier: "detailSegue", sender: poke)
 	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -106,6 +107,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 			filteredList = list.filter({$0.name.range(of: searchText.lowercased()) != nil})
 		}
 		collectionView.reloadData()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "detailSegue" {
+			if let detail = segue.destination as? DetailViewController {
+				if let poke = sender as? Pokemon {
+					detail.pokemon = poke
+				}
+			}
+		}
 	}
 }
 

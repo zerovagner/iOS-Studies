@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA7A09F01ED743E900BC79A3 /* PokeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A09EF1ED743E900BC79A3 /* PokeCollectionViewCell.swift */; };
 		DA957A251ED7A8E0008FF48C /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA957A241ED7A8E0008FF48C /* csv.swift */; };
+		DAB1A8C51EDC6FC900913295 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1A8C41EDC6FC900913295 /* DetailViewController.swift */; };
+		DAB1A8C81EDC953D00913295 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB1A8C71EDC953D00913295 /* Alamofire.framework */; };
 		DABBBC071ED4A9C0005DE86D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */; };
 		DABBBC091ED4A9C0005DE86D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBBC081ED4A9C0005DE86D /* ViewController.swift */; };
 		DABBBC0C1ED4A9C0005DE86D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBBC0A1ED4A9C0005DE86D /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		DA7A09EF1ED743E900BC79A3 /* PokeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA957A241ED7A8E0008FF48C /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		DAB1A8C41EDC6FC900913295 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DAB1A8C71EDC953D00913295 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DABBBC031ED4A9C0005DE86D /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABBBC081ED4A9C0005DE86D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB1A8C81EDC953D00913295 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,11 +60,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		DAB1A8C61EDC953C00913295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAB1A8C71EDC953D00913295 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DABBBBFA1ED4A9C0005DE86D = {
 			isa = PBXGroup;
 			children = (
 				DABBBC051ED4A9C0005DE86D /* Pokedex */,
 				DABBBC041ED4A9C0005DE86D /* Products */,
+				DAB1A8C61EDC953C00913295 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +94,7 @@
 				DABBBC1A1ED4AEB2005DE86D /* Model */,
 				DABBBC061ED4A9C0005DE86D /* AppDelegate.swift */,
 				DABBBC081ED4A9C0005DE86D /* ViewController.swift */,
+				DAB1A8C41EDC6FC900913295 /* DetailViewController.swift */,
 				DABBBC0A1ED4A9C0005DE86D /* Main.storyboard */,
 				DABBBC0D1ED4A9C0005DE86D /* Assets.xcassets */,
 				DABBBC0F1ED4A9C0005DE86D /* LaunchScreen.storyboard */,
@@ -124,6 +139,7 @@
 				DABBBBFF1ED4A9C0005DE86D /* Sources */,
 				DABBBC001ED4A9C0005DE86D /* Frameworks */,
 				DABBBC011ED4A9C0005DE86D /* Resources */,
+				DAB1A8C91EDC964C00913295 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,6 +201,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DAB1A8C91EDC964C00913295 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/ios/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DABBBBFF1ED4A9C0005DE86D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,6 +226,7 @@
 				DABBBC091ED4A9C0005DE86D /* ViewController.swift in Sources */,
 				DA7A09F01ED743E900BC79A3 /* PokeCollectionViewCell.swift in Sources */,
 				DABBBC071ED4A9C0005DE86D /* AppDelegate.swift in Sources */,
+				DAB1A8C51EDC6FC900913295 /* DetailViewController.swift in Sources */,
 				DABBBC1C1ED4AECB005DE86D /* Pokemon.swift in Sources */,
 				DA957A251ED7A8E0008FF48C /* csv.swift in Sources */,
 			);
@@ -320,6 +354,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2KXS6MVM6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerovagner.Pokedex;
@@ -333,6 +371,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2KXS6MVM6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerovagner.Pokedex;
