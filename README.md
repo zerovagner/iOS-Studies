@@ -9,3 +9,4 @@ The following are reproductions of the content presented in the course iOS 10 & 
 - RetroCalculator (Section 4: Foundational iOS -> Lecture 51 - 57)
 - PartyRockMansion (Section 4: Foundational iOS -> Lecture 60 - 65)
 - RainyShinyCloudy (Section 5: Working with REST and... -> Lecture 70 - 83)
+- PokeDex (Section 5: Working with REST and... -> Lecture 84 - 100)
