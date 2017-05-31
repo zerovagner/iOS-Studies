@@ -13,6 +13,7 @@
 		DA2BBB1A1EDF01DF00585620 /* DreamLister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBB181EDF01DF00585620 /* DreamLister.xcdatamodeld */; };
 		DA2BBB1C1EDF01DF00585620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2BBB1B1EDF01DF00585620 /* Assets.xcassets */; };
 		DA2BBB1F1EDF01DF00585620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BBB1D1EDF01DF00585620 /* LaunchScreen.storyboard */; };
+		DA2BBB4A1EDF12AA00585620 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBB491EDF12AA00585620 /* MaterialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DA2BBB1B1EDF01DF00585620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA2BBB1E1EDF01DF00585620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA2BBB201EDF01DF00585620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA2BBB491EDF12AA00585620 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		DA2BBB101EDF01DF00585620 /* DreamLister */ = {
 			isa = PBXGroup;
 			children = (
+				DA2BBB481EDF129700585620 /* View */,
 				DA2BBB361EDF0A9900585620 /* Model */,
 				DA2BBB111EDF01DF00585620 /* AppDelegate.swift */,
 				DA2BBB131EDF01DF00585620 /* ViewController.swift */,
@@ -81,6 +84,14 @@
 			children = (
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		DA2BBB481EDF129700585620 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA2BBB491EDF12AA00585620 /* MaterialView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				DA2BBB141EDF01DF00585620 /* ViewController.swift in Sources */,
 				DA2BBB121EDF01DF00585620 /* AppDelegate.swift in Sources */,
 				DA2BBB1A1EDF01DF00585620 /* DreamLister.xcdatamodeld in Sources */,
+				DA2BBB4A1EDF12AA00585620 /* MaterialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +336,7 @@
 				DA2BBB251EDF01DF00585620 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
