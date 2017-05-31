@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="B4X-MF-fcR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="150" id="B4X-MF-fcR" customClass="ItemTableViewCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4X-MF-fcR" id="Fbu-lB-zLw">
@@ -106,6 +106,12 @@
                                                 <constraint firstItem="kz8-xD-ifj" firstAttribute="top" secondItem="Fbu-lB-zLw" secondAttribute="topMargin" id="yWB-sN-PZ9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="rUh-1s-UYT" id="7we-V9-1Z3"/>
+                                            <outlet property="priceLabel" destination="jbR-Dt-z2o" id="QBn-Y2-XBk"/>
+                                            <outlet property="thumbImg" destination="8kf-3k-W7o" id="QZw-6M-6Xf"/>
+                                            <outlet property="titleLabel" destination="vqZ-jl-I4J" id="QgG-uj-ObV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,6 +132,10 @@
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="PdH-DK-luI" id="UbO-Nc-3Ta"/>
+                        <outlet property="tableView" destination="yrh-p5-zvE" id="wjz-yn-f1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +146,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sDA-Ks-YZU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uPg-as-ECf">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPg-as-ECf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
