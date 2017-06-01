@@ -30,6 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		// Dispose of any resources that can be recreated.
 	}
 
+	@IBAction func addButtonPressed(_ sender: Any) {
+		performSegue(withIdentifier: "detailSegue", sender: nil)
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: "detailSegue", sender: fetchedResultsController.object(at: indexPath))
+	}
+	
 	func configureCell(cell: ItemTableViewCell, withIndexPath indexPath: IndexPath) {
 		let item = fetchedResultsController.object(at: indexPath)
 		cell.configureCell(fromItem: item)
