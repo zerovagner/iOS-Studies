@@ -33,6 +33,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		// Dispose of any resources that can be recreated.
 	}
 
+	@IBAction func segmentChanged(_ sender: UISegmentedControl) {
+		attemptFetch()
+		tableView.reloadData()
+	}
+	
 	@IBAction func addButtonPressed(_ sender: Any) {
 		performSegue(withIdentifier: "detailSegue", sender: nil)
 	}
@@ -76,7 +81,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	func attemptFetch () {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 		let dateSort = NSSortDescriptor(key: "created", ascending: false)
-		fetchRequest.sortDescriptors = [dateSort]
+		let priceSort = NSSortDescriptor(key: "price", ascending: true)
+		let titleSort = NSSortDescriptor(key: "title", ascending: true)
+		
+		switch segment.selectedSegmentIndex {
+			case 0:
+				fetchRequest.sortDescriptors = [dateSort]
+			case 1:
+				fetchRequest.sortDescriptors = [priceSort]
+			case 2:
+				fetchRequest.sortDescriptors = [titleSort]
+			default:
+				break
+		}
 		
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
 		                                            managedObjectContext: context,
