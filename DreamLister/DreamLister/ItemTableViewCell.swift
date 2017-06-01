@@ -28,7 +28,7 @@ class ItemTableViewCell: UITableViewCell {
 
 	func configureCell (fromItem item: Item) {
 		titleLabel.text = item.title
-		priceLabel.text = "$\(item.price)"
+		priceLabel.text = String(format: "$%.2f", item.price)
 		descriptionLabel.text = item.details
 	}
 }

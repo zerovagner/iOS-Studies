@@ -7,16 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+	@IBOutlet weak var storePicker: UIPickerView!
+	@IBOutlet weak var titleTextField: CustomTextField!
+	@IBOutlet weak var priceTextField: CustomTextField!
+	@IBOutlet weak var descriptionTextField: CustomTextField!
+	
+	var stores = [Store]()
+	var itemToEdit: Item?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		if let topItem = self.navigationController?.navigationBar.topItem {
+		if let topItem = navigationController?.navigationBar.topItem {
 			topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
 		}
-		// Do any additional setup after loading the view.
-    }
+		storePicker.dataSource = self
+		storePicker.delegate = self
+		getStores()
+		if stores.count == 0 {
+			generateTestData()
+			getStores()
+		}
+		
+		if itemToEdit != nil {
+			loadItemData()
+		}
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -24,14 +44,83 @@ class ItemDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return stores[row].name
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return stores.count
+	}
+	
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		
+	}
+	
+	func getStores() {
+		let fr: NSFetchRequest<Store> = Store.fetchRequest()
+		do {
+			stores = try context.fetch(fr)
+			storePicker.reloadAllComponents()
+		} catch let err as NSError {
+			print(err.description)
+		}
+	}
+	
+	@IBAction func savePressed(_ sender: UIButton) {
+		let item = (itemToEdit != nil) ? itemToEdit! : Item(context: context)
+		
+		if let title = titleTextField.text {
+			item.title = title
+		}
+		
+		if let price = priceTextField.text, let dPrice = Double(price) {
+			item.price = dPrice
+		}
+		
+		if let details = descriptionTextField.text {
+			item.details = details
+		}
+		
+		item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+		ad.saveContext()
+		
+		navigationController?.popViewController(animated: true)
+	}
+	
+	func loadItemData() {
+		titleTextField.text = itemToEdit?.title
+		priceTextField.text = String(format: "%.2f",(itemToEdit?.price)!)
+		descriptionTextField.text = itemToEdit?.details
+		
+		if let store = itemToEdit?.toStore {
+			var index = 0
+			repeat {
+				if stores[index].name == store.name {
+					storePicker.selectRow(index, inComponent: 0, animated: false)
+					break
+				}
+				index += 1
+			} while index < stores.count
+		}
+	}
+	
+	func generateTestData () {
+		let store = Store(context: context)
+		store.name = "Best Buy"
+		let store2 = Store(context: context)
+		store2.name = "Tesla Dealership"
+		let store3 = Store(context: context)
+		store3.name = "Frys Electronics"
+		let store4 = Store(context: context)
+		store4.name = "Target"
+		let store5 = Store(context: context)
+		store5.name = "Amazon"
+		let store6 = Store(context: context)
+		store6.name = "K Mart"
+		ad.saveContext()
+	}
 }

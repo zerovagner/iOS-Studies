@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="150" id="B4X-MF-fcR" customClass="ItemTableViewCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="150" id="B4X-MF-fcR" customClass="ItemTableViewCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4X-MF-fcR" id="Fbu-lB-zLw">
@@ -220,6 +220,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="sIU-l9-Cbe" eventType="touchUpInside" id="gFr-sU-TKU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKC-mW-bze">
                                 <rect key="frame" x="82" y="423" width="250" height="21"/>
@@ -263,6 +266,12 @@
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="aAY-yL-UBj" id="Ebl-dm-oU7"/>
+                        <outlet property="priceTextField" destination="27O-lv-Rmx" id="fc6-4Z-bhg"/>
+                        <outlet property="storePicker" destination="Pua-df-or2" id="apZ-Cq-5DE"/>
+                        <outlet property="titleTextField" destination="rbU-YM-XUF" id="d6r-HO-tMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xf-Im-F0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

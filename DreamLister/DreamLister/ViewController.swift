@@ -21,8 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		//generateTestData()
 		attemptFetch()
+		if fetchedResultsController.fetchedObjects?.count == 0 {
+			generateTestData()
+			attemptFetch()
+		}
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -35,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
 		performSegue(withIdentifier: "detailSegue", sender: fetchedResultsController.object(at: indexPath))
 	}
 	
@@ -72,18 +76,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	func attemptFetch () {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 		let dateSort = NSSortDescriptor(key: "created", ascending: false)
-		let appDelegate = UIApplication.shared.delegate as? AppDelegate
-		let managedObjectContext = appDelegate?.persistentContainer.viewContext
 		fetchRequest.sortDescriptors = [dateSort]
 		
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-		                                            managedObjectContext: managedObjectContext!,
+		                                            managedObjectContext: context,
 		                                            sectionNameKeyPath: nil, cacheName: nil)
+		fetchedResultsController.delegate = self
 		
 		do {
 			try fetchedResultsController.performFetch()
 		} catch let err as NSError {
 			print(err.debugDescription)
+		}
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "detailSegue" {
+			if let detail = segue.destination as? ItemDetailViewController {
+				detail.itemToEdit = sender as? Item
+			}
 		}
 	}
 	
@@ -121,25 +132,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func generateTestData() {
-		let ad = UIApplication.shared.delegate as! AppDelegate
-		
-		let item = Item(context: ad.persistentContainer.viewContext)
+		let item = Item(context: context)
 		item.title = "MacBook Pro"
 		item.price = 1800
 		item.details = "I can't wait until the September event, I hope they release new MPBs"
 		
-		let item2 = Item(context: ad.persistentContainer.viewContext)
+		let item2 = Item(context: context)
 		item2.title = "Bose Headphones"
 		item2.price = 300
 		item2.details = "But man, its so nice to be able to blaock out everyone with the noise canceling tech."
 		
-		let item3 = Item(context: ad.persistentContainer.viewContext)
+		let item3 = Item(context: context)
 		item3.title = "Tesla Model S"
 		item3.price = 110000
 		item3.details = "Oh man this is a beautiful car. And one day, I willl own it"
 		
 		ad.saveContext()
-		
 	}
 
 }
