@@ -30,5 +30,6 @@ class ItemTableViewCell: UITableViewCell {
 		titleLabel.text = item.title
 		priceLabel.text = String(format: "$%.2f", item.price)
 		descriptionLabel.text = item.details
+		thumbImg.image = item.toImage?.image as? UIImage
 	}
 }
