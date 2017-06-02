@@ -3,6 +3,8 @@ Some tests involving iOS and exercises from courses I've enrolled into.
 
 - Find Flight -> Playing with randomly generated strings simulating flight numbers. The sections are based in the first two characters of the string, which in the case of number of flights, indicates the company prefix.
 
+- Play Nice -> A knock-off of the Playstation Network app. Just for layout studies and some improvements over the current App.
+
 The following are reproductions of the content presented in the course iOS 10 & Swift 3: From Beginner to Paid Professional (https://www.udemy.com/devslopes-ios10/learn/v4/). In parenthesis is the section where the app is made.
 
 - Miracle Pills (Section 4: Foundational iOS -> Lectures 42 - 46)
