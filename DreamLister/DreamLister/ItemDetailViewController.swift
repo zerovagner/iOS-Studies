@@ -11,6 +11,7 @@ import CoreData
 
 class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+	@IBOutlet weak var itemTypePicker: UIPickerView!
 	@IBOutlet weak var storePicker: UIPickerView!
 	@IBOutlet weak var titleTextField: CustomTextField!
 	@IBOutlet weak var priceTextField: CustomTextField!
@@ -18,6 +19,7 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 	@IBOutlet weak var thumbImage: UIImageView!
 	
 	var stores = [Store]()
+	var itemTypes = [ItemType]()
 	var itemToEdit: Item?
 	var imagePicker: UIImagePickerController!
 	
@@ -28,10 +30,17 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 		}
 		storePicker.dataSource = self
 		storePicker.delegate = self
+		itemTypePicker.dataSource = self
+		itemTypePicker.delegate = self
 		getStores()
 		if stores.count == 0 {
 			generateTestData()
 			getStores()
+		}
+		getItemTypes()
+		if itemTypes.count == 0 {
+			generateItemTypeTestData()
+			getItemTypes()
 		}
 		
 		if itemToEdit != nil {
@@ -50,11 +59,11 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
 
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return stores[row].name
+		return pickerView == storePicker ? stores[row].name : itemTypes[row].type
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return stores.count
+		return pickerView == storePicker ? stores.count : itemTypes.count
 	}
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -70,6 +79,16 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 		do {
 			stores = try context.fetch(fr)
 			storePicker.reloadAllComponents()
+		} catch let err as NSError {
+			print(err.description)
+		}
+	}
+	
+	func getItemTypes() {
+		let fr: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+		do {
+			itemTypes = try context.fetch(fr)
+			
 		} catch let err as NSError {
 			print(err.description)
 		}
@@ -94,6 +113,7 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 		picture.image = thumbImage.image
 		item.toImage = picture
 		
+		item.toItemType = itemTypes[itemTypePicker.selectedRow(inComponent: 0)]
 		item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
 		ad.saveContext()
 		
@@ -135,6 +155,16 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 				index += 1
 			} while index < stores.count
 		}
+		if let itemType = itemToEdit?.toItemType {
+			var index = 0
+			repeat {
+				if itemTypes[index].type == itemType.type {
+					itemTypePicker.selectRow(index, inComponent: 0, animated: false)
+					break
+				}
+				index += 1
+			} while index < itemTypes.count
+		}
 	}
 	
 	func generateTestData () {
@@ -151,5 +181,16 @@ class ItemDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 		let store6 = Store(context: context)
 		store6.name = "K Mart"
 		ad.saveContext()
+	}
+	
+	func generateItemTypeTestData () {
+		let itemType = ItemType(context: context)
+		itemType.type = "Computer"
+		let itemType2 = ItemType(context: context)
+		itemType2.type = "Automobile"
+		let itemType3 = ItemType(context: context)
+		itemType3.type = "TV"
+		let itemType4 = ItemType(context: context)
+		itemType4.type = "Music"
 	}
 }
